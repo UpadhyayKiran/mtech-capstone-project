@@ -15,6 +15,7 @@ A Defect De-Duplication AI System automatically identifies whether a newly repor
 Though text is different, AI detects them as the same defect.
 
 **Benefits:**
+
 • Reduces duplicate bug reports by 40–70%  
 • Saves QA & developer time  
 • Faster bug triage  
