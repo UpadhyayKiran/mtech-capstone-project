@@ -59,3 +59,57 @@ A research-driven evaluation and comparison of transformer-based language models
 - Proof-of-concept implementation
 
 ---
+
+## **Option 3:Machine Learning–Based Parking Occupancy Detection and Availability Prediction**
+**Proposed by:** Sunaina K S
+
+This project investigates machine learning models for parking occupancy classification and short-term availability prediction using public datasets, with a focus on comparative evaluation and predictive performance.
+
+**Objectives**
+
+* Analyze public parking datasets
+* Build ML models for parking occupancy classification
+* Develop time-series models for availability prediction
+* Compare model performance using standard metrics
+* Identify limitations and future improvements
+
+**ML Models for Comparison**
+* CNN – Deep learning baseline
+* ResNet / MobileNet – Transfer learning
+* SVM + HOG – Classical ML baseline
+  
+**Time-Series Prediction Models**
+* ARIMA – Statistical baseline
+* Random Forest – Nonlinear pattern learning
+* LSTM – Deep temporal modeling
+
+**Dataset Source**
+1. CNRPark / CNRPark+EXT Dataset
+Source: Institute of Information Science and Technologies (ISTI-CNR), Italy
+
+Access Link:
+https://cnrpark.it
+
+3. Kaggle Smart Parking / Parking Occupancy Dataset
+Source: Kaggle (Public Open Dataset Platform)
+
+Access Link:
+https://www.kaggle.com
+
+**Core Research Gap (ML-focused)**
+
+Existing studies focus either on parking space detection or simple statistical analysis, while limited work integrates occupancy classification with short-term availability prediction using comparative machine learning models on real-world datasets
+
+- Lack of predictive capability: Most software-based smart parking systems focus only on real-time occupancy classification and do not predict short-term future parking availability.
+- No integrated ML pipeline: Existing works often treat parking occupancy detection and availability prediction as separate problems, with limited integration into a unified machine learning framework.
+- Insufficient comparative evaluation: There is a lack of systematic comparison between classical machine learning, deep learning, and statistical models on the same parking datasets using standard evaluation metrics.
+  
+**What’s different ?**
+* Clear data-driven ML pipeline
+*  Separate classification vs prediction models
+*  Strong research gap from ML perspective
+*  Explicit model comparison (classical ML vs deep learning)
+*  Clean evaluation metrics (Accuracy, F1, MAE, RMSE)
+
+
+
