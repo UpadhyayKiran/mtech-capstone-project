@@ -104,12 +104,85 @@ Existing studies focus either on parking space detection or simple statistical a
 - No integrated ML pipeline: Existing works often treat parking occupancy detection and availability prediction as separate problems, with limited integration into a unified machine learning framework.
 - Insufficient comparative evaluation: There is a lack of systematic comparison between classical machine learning, deep learning, and statistical models on the same parking datasets using standard evaluation metrics.
   
-**What’s different ?**
+**What’s Novel ?**
 * Clear data-driven ML pipeline
 *  Separate classification vs prediction models
 *  Strong research gap from ML perspective
 *  Explicit model comparison (classical ML vs deep learning)
 *  Clean evaluation metrics (Accuracy, F1, MAE, RMSE)
+  
+---
+
+## **Option 4:Personalized AI Tutor with Long-Term Memory (Agentic EdTech)**
+**Proposed by:** Sunaina K S
+
+**Problem Statement**
+Most existing e-learning platforms provide static or shallow personalization. They adapt content only based on recent quizzes or session-level performance, 
+
+**Ignoring:**
+
+- Long-term learning behavior
+- Forgetting patterns
+- Learning speed differences
+- Concept dependencies
+  
+This results in one-size-fits-all learning, poor retention, and disengagement.
+
+**Proposed Solution**
+
+This project proposes an Agentic AI-based Personalized Tutor that:
+
+- Acts as an autonomous tutor agent
+- Observes student interactions continuously
+- Maintains long-term memory of:
+  * Strengths & weaknesses
+  * Learning pace
+  * Mistake patterns
+  * Concept mastery over time
+- Plans personalized learning paths
+- Adapts content difficulty in real time
+- Learns from feedback (student success/failure)
+  
+The tutor is not just a recommender — it is an autonomous decision-making agent.
+
+**Software & Programming Used:**
+The project is implemented primarily in Python. PyTorch and Stable-Baselines3 are used to build the reinforcement-learning tutor agent, while Gymnasium defines the student–tutor interaction environment. Pandas/NumPy handle student datasets and long-term memory storage, with optional Flask/Streamlit for a demo interface.
+
+**Dataset Source**
+
+We can combine Real+synthetic datasets.
+
+- Publicly Available Datasets : ASSISTments Dataset
+- EdNet Dataset : Large-scale real student data
+- KDD Cup Educational Datasets : ·Student problem-solving sequences
+- Synthetic Data (Recommended)
+
+**What's Novel?**
+
+* Long-Term Memory (Most systems lack this)
+* Agentic Decision-Making (Not rule-based)
+* Teaching Strategy Adaptation
+* Continuous Feedback Loop
+
+**Research Gap**
+
+🔴 Gap 1: Lack of Long-Term Personalization : Most tutoring systems Reset or weakly retain student history and Ignore forgetting and concept decay.
+
+🔴 Gap 2: Limited Agent Autonomy : Use static policies and Do not self-improve teaching strategies
+
+🔴 Gap 3: Poor Adaptation to Learning Pace : Treat all students similarly and Struggle with slow or irregular learners
+
+🔴 Gap 5: Limited Explainability : Black-box tutors reduce trust.
+
+
+
+
+
+
+
+
+
+
 
 
 
