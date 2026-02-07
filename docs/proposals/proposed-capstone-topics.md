@@ -174,6 +174,21 @@ We can combine Real+synthetic datasets.
 
 🔴 Gap 5: Limited Explainability : Black-box tutors reduce trust.
 
+## **Option 5:An AI agent that helps clinical researchers quickly navigate unstructured medical literature and case studies, delivering evidence-based insights and reducing review time from weeks to days**
+**Proposed by:** Divya Narasimha Prasanna
+**Problem**
+
+Clinical researchers spend weeks manually reviewing:
+Unstructured medical literature
+Case studies
+Clinical trial reports
+PDFs, guidelines, EMRs, and white papers
+
+**This leads to:**
+Slow evidence synthesis
+Information overload
+Missed insights
+High human effort & cost
 
 
 
