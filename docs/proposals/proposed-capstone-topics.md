@@ -174,6 +174,70 @@ We can combine Real+synthetic datasets.
 
 🔴 Gap 5: Limited Explainability : Black-box tutors reduce trust.
 
+## **Option 5:An AI agent that helps clinical researchers quickly navigate unstructured medical literature and case studies, delivering evidence-based insights and reducing review time from weeks to days**
+**Proposed by:** Divya Narasimha Prasanna
+**Problem**
+
+Clinical researchers spend weeks manually reviewing:
+Unstructured medical literature
+Case studies
+Clinical trial reports
+PDFs, guidelines, EMRs, and white papers
+
+**This leads to:**
+Slow evidence synthesis
+Information overload
+Missed insights
+High human effort & cost
+
+ **Core Capabilities**
+**Intelligent Literature Understanding**
+
+NLP-based parsing of:
+Research papers
+Clinical notes
+Case reports
+Trial data
+Guidelines
+Converts unstructured text → structured knowledge
+
+**🔍 Semantic Search (Not Keyword Search)**
+Context-aware search
+Concept matching (e.g., "cardiac failure" ≈ "heart failure")
+Disease–symptom–drug–outcome linking
+
+**📊 Evidence-Based Insight Engine**
+Auto-summarization of findings
+Risk–benefit analysis
+Outcome comparison
+Confidence scoring based on source credibility
+
+**🧬 Clinical Knowledge Graph**
+Relationships between:
+Diseases
+Drugs
+Genes
+Symptoms
+Treatments
+Outcomes
+
+**🧪 Use Cases**
+Clinical trial design
+Systematic reviews
+Meta-analysis support
+Drug discovery research
+Rare disease research
+Personalized treatment planning
+Evidence-based medicine (EBM)
+
+**🧩 Tech Stack Suggestion**
+NLP: BioBERT, ClinicalBERT, SciSpacy
+LLMs: GPT-based agents, Med-PaLM style models
+Vector DB: FAISS / Pinecone
+Knowledge Graph: Neo4j
+Search: Semantic + hybrid search
+ML: Topic modeling, clustering, classification
+UI: Evidence dashboard + chat-based interface
 
 
 
