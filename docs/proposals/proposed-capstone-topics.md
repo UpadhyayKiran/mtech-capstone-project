@@ -174,6 +174,8 @@ We can combine Real+synthetic datasets.
 
 🔴 Gap 5: Limited Explainability : Black-box tutors reduce trust.
 
+---
+
 ## **Option 5:An AI agent that helps clinical researchers quickly navigate unstructured medical literature and case studies, delivering evidence-based insights and reducing review time from weeks to days**
 **Proposed by:** Divya Narasimha Prasanna
 **Problem**
@@ -239,7 +241,39 @@ Search: Semantic + hybrid search
 ML: Topic modeling, clustering, classification
 UI: Evidence dashboard + chat-based interface
 
+---
 
+## **Option 6: Explainable AI (XAI) for Credit Scoring and Loan Approval**
+
+While the provided XAI survey focuses on biomedicine, the methods (SHAP, LIME, Counterfactuals) are heavily researched in finance for regulatory compliance (GDPR / EU AI Act). There is a massive volume of IEEE papers on "Fairness" and "Explainability" in banking.
+
+### **Problem Statement**
+"Black box" deep learning models (like XGBoost or Neural Nets) offer high accuracy for credit scoring but lack transparency. This project implements and evaluates post-hoc explainability methods to ensure loan approval decisions are fair and understandable.
+
+### **Literature Search Keywords (for IEEE Xplore)**
+- Explainable AI (XAI) in Credit Risk  
+- Fairness-aware Machine Learning  
+- SHAP / LIME for Tabular Financial Data  
+- Counterfactual Explanations in Banking  
+
+### **Implementation Steps (Based on Source)**
+1. **Model Training**  
+   Train a complex model (Gradient Boosting or Deep Learning) on a dataset like the German Credit Data.
+
+2. **Bias Detection**  
+   Use metrics like Disparate Impact or Demographic Parity to measure if the model discriminates against a protected group (e.g., age or gender).
+
+3. **Explainability Layer**  
+   Implement SHAP (Shapley Additive Explanations) to generate global and local feature importance plots.
+
+4. **Fairness Mitigation**  
+   Apply a pre-processing technique (like Reweighting) or in-processing technique (like Adversarial Debiasing) to reduce bias.
+
+5. **Dashboard**  
+   Build a dashboard (using Streamlit or Dash) that visualizes the "Why" behind a rejection  
+   (e.g., "Loan rejected because credit history < 2 years").
+
+---
 
 
 
