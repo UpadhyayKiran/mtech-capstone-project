@@ -1,9 +1,9 @@
 Title of Article/Paper,Author(s),Year of Publishing,Source Website,URL,Team Member Name,Status (Read / To Read)
-Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,Patrick Lewis et al.,2020,NeurIPS Proceedings (arXiv version),https://arxiv.org/abs/2005.11401,Kiran Upadhyay,To Read
-REALM: Retrieval-Augmented Language Model Pre-Training,Kevin Guu et al.,2020,ICML (PMLR),https://proceedings.mlr.press/v119/guu20a.html,Kiran Upadhyay,To Read
-Atlas: Few-shot Learning with Retrieval Augmented Language Models,Gautier Izacard et al.,2023,Journal of Machine Learning Research (JMLR),https://www.jmlr.org/papers/v24/23-0037.html,Kiran Upadhyay,To Read
+Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,Patrick Lewis et al.,2020,NeurIPS Proceedings (arXiv version),https://arxiv.org/abs/2005.11401,Kiran Upadhyay,Read
+REALM: Retrieval-Augmented Language Model Pre-Training,Kevin Guu et al.,2020,ICML (PMLR),https://proceedings.mlr.press/v119/guu20a.html,Kiran Upadhyay,Read
+Atlas: Few-shot Learning with Retrieval Augmented Language Models,Gautier Izacard et al.,2023,Journal of Machine Learning Research (JMLR),https://www.jmlr.org/papers/v24/23-0037.html,Kiran Upadhyay,Read
 Improving Language Models by Retrieving from Trillions of Tokens,Sebastian Borgeaud et al.,2022,ICML (PMLR),https://proceedings.mlr.press/v162/borgeaud22a.html,Kiran Upadhyay,To Read
-Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering,Gautier Izacard et al.,2021,EACL (ACL Anthology),https://aclanthology.org/2021.eacl-main.74/,Kiran Upadhyay,To Read
+Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering,Gautier Izacard et al.,2021,EACL (ACL Anthology),https://aclanthology.org/2021.eacl-main.74/,Kiran Upadhyay,Read
 BioBERT: a pre-trained biomedical language representation model for biomedical text mining,Jinhyuk Lee et al.,2019,Bioinformatics (Oxford University Press),https://doi.org/10.1093/bioinformatics/btz682,Kiran Upadhyay,To Read
 SciBERT: A Pretrained Language Model for Scientific Text,Iz Beltagy et al.,2019,EMNLP (arXiv version),https://arxiv.org/abs/1903.10676,Kiran Upadhyay,To Read
 ClinicalBERT: Modeling Clinical Notes and Predicting Hospital Readmission,Kexin Huang et al.,2019,arXiv (CHIL Workshop),https://arxiv.org/abs/1904.05342,Kiran Upadhyay,To Read
@@ -26,3 +26,5 @@ OpenBioLink: a benchmarking framework for large-scale biomedical link prediction
 KGen: a knowledge graph generator from biomedical scientific literature,Rossanez et al.,2020,Springer Nature (BMC Medical Informatics and Decision Making),https://doi.org/10.1186/s12911-020-01341-5,Kiran Upadhyay,To Read
 Harnessing LLMs for Medical Insights:NER Extraction from Summarized Medical Text,D Sasikala; R Sudarshan; S. Sivasathya,04 November 2024,IEEE Xplore,https://ieeexplore.ieee.org/document/10724860,Divya,To Read
 Biomedical Chat Assistant with Personalized Document Reader Using BioMistral and RAG,Esther C; Kanisshka U P; Ananya G S; Tamizhmalar D; Elangovan V; Ishan Raghavender N,10 June 2025,IEEE Xplore,https://ieeexplore.ieee.org/document/11020219/authors#authors,Divya,To Read
+On Faithfulness and Factuality in Abstractive Summarization,Maynez et al.,2020,ACL Anthology,https://aclanthology.org/2020.acl-main.173/,Kiran Upadhyay,To Read
+PubMedQA: A Dataset for Biomedical Research Question Answering,Jin et al.,2019,EMNLP,https://aclanthology.org/D19-1259/,Kiran Upadhyay,To Read
