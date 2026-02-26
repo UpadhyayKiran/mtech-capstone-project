@@ -1,6 +1,6 @@
 
 
-# **Title. AI Agents in Clinical Medicine: A Systematic Review** #
+# **AI Agents in Clinical Medicine: A Systematic Review** #
 
 ## **Problem Statement:** #
 Base Large Language Models (LLMs) perform well on medical exams but face safety issues in clinical settings, including hallucinations, misinformation (up to 22% error rate), and inability to perform multi-step reasoning with external data.
@@ -25,6 +25,7 @@ Results:
 
 ## **Conclusion & Relevance:** #
 AI agents outperform base LLMs when architecture matches task complexity. The findings guide our team in designing structured, tool-augmented agent systems with careful validation.
+
 
 # **Bio-regulatory Event Extraction using LLMs** #
 
@@ -52,6 +53,7 @@ LLMs show promising performance in bio-regulatory event extraction, particularly
 
 ## **Relevance to Our Team** ##
 This paper is highly relevant as it explores the application of LLMs in a specialised biomedical NLP task, which aligns with our interest in leveraging advanced AI for scientific data extraction. The insights into LLM performance in low-resource domains, prompt engineering, and the comparison with traditional methods provide valuable guidance for developing similar solutions and addressing their inherent challenges.
+
 
 
 # **Foundational Architecture for AI Agents in Healthcare** #
@@ -86,6 +88,7 @@ Medical AI agents represent a transformative shift in healthcare, offering enhan
 This paper is highly relevant as it outlines a foundational architecture for AI agents in healthcare, which aligns with our goals of developing intelligent systems for medical applications.
 The emphasis on multimodal data integration, autonomous decision-making, and adaptive learning provides a roadmap for designing robust and context-aware AI solutions.
 Understanding the challenges in implementation, such as data privacy, ethical considerations, and regulatory adaptation, is crucial for our team's strategic planning and development efforts.
+
 
 
 # **The Levels of Evidence and their role in Evidence-Based Medicine** #
