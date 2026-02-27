@@ -113,9 +113,91 @@ Understanding levels of evidence is vital for EBM, helping prioritise informatio
 This framework helps us critically appraise research, strategically design studies, and focus on improving research quality by incorporating proper methodologies.
 
 
+# **Evidence-Based Medicine: Navigating Uncertainty** #
+Problem Statement
+Modern medicine faces significant challenges due to an overload of information and the critical need for well-founded clinical decision-making. This environment necessitates a structured approach to manage vast amounts of data and ensure that clinical practices are based on reliable evidence, rather than unfounded beliefs or unscientific practices .The paper aims to provide a systematic method to address uncertainties in daily clinical practice.
 
+## **Algorithms Used** ##
+This paper focuses on the methodological framework of Evidence-Based Medicine (EBM), which is a human-driven process for clinical decision-making. It does not describe specific computational algorithms in the context of data processing or machine learning. Instead, it outlines a five-step systematic method for clinicians to follow:
+    • Formulating clinical questions,
+    • Conducting efficient literature searches,
+    • Critically appraising evidence,
+    • Evaluating its applicability, and
+    • Integrating knowledge into clinical practice.
 
+## **Datasets** ##
+The paper does not utilise or refer to specific datasets in the conventional sense of computational analysis. Instead, it refers to 'scientific sources' and 'literature' as the body of information that clinicians must navigate and critically appraise. The process involves searching databases like PubMed and considering tertiary and secondary sources.
 
+## **Model Training and Testing** ##
+This paper does not involve model training or testing, as it describes a methodological framework for clinical practice rather than a computational model. The 'training' aspect in this context refers to clinicians learning and applying the EBM steps, and 'testing' involves evaluating the appropriateness of clinical practices based on scientific evidence.
 
+## **Results** ##
+The paper presents the EBM framework as a structured and practical approach to improve health care by balancing care quality, efficiency, and resource management. It emphasises that EBM helps professionals make optimal, evidence-based decisions and avoid accepting conclusions without critical questioning. The framework aims to integrate evidence with clinical expertise and patient preferences.
 
+## **Conclusion** ##
+Evidence-based medicine offers a robust, five-step framework to navigate the uncertainties of modern medicine, ensuring clinical decisions are well-founded and patient-centered. It combines scientific rigour with practical application, emphasising critical appraisal and integration of evidence into practice. The paper also acknowledges the emerging role of artificial intelligence as a tool to enhance, but not replace, EBM processes, particularly in information retrieval and synthesis.
 
+## **Relevance to Our Team** ##
+This paper is highly relevant for our team involved in healthcare, research, or evidence synthesis, as it outlines a foundational approach to decision-making in a complex information environment. It provides a clear, systematic methodology for evaluating and applying scientific evidence, which is crucial for developing guidelines, conducting research, or informing clinical practice. The emphasis on critical appraisal and structured questioning can enhance the rigour and effectiveness of our work.
+
+# **Clinical Entity Augmented Retrieval (CLEAR) for Information Extraction** #
+
+## **Problem Statement** #
+Traditional large language models (LLMs) often struggle with inefficient retrieval and high token usage when extracting information from extensive clinical notes, leading to increased inference times and potential performance degradation due to long input lengths.
+Existing retrieval-augmented generation (RAG) methods, while an improvement, still rely on embeddings that can be inefficient.
+
+## **Algorithms Used** ##
+The paper introduces Clinical Entity Augmented Retrieval (CLEAR), a RAG pipeline that utilises clinical entities for information retrieval. It involves
+    • Named Entity Recognition (NER) utilised Flan-T5-XXL to identify clinical entities,
+    • Bio+Clinical BERT for cosine similarity for filtering relevance to the input query, 
+    • Ontologies (UMLS) to augmenting the list and
+    • LLMs (GPT-4) to enhance sensitivity .
+
+## **Datasets** ##
+The study used two real-world EHR-derived datasets:
+    • The Stanford Medication for Opioid Use Disorder (MOUD) dataset and t
+    • The CheXpert dataset.
+The MOUD dataset included 13 clinical variables related to substance use, mental health, and social determinants of health.
+The CheXpert dataset focused on 5 variables from chest X-ray reports, such as cardiomegaly and pneumonia.
+
+## **Model Training and Testing** ##
+CLEAR's performance was compared against embedding RAG and full-note approaches across six LLMs. For fine-tuning, BERT-sized models were used, with the output of CLEAR serving as labels.The models were evaluated on information extraction tasks for 18 variables, and inter-rater reliability was assessed using Cohen's Kappa.
+
+## **Results** ##
+CLEAR achieved average F1 scores of 0.90, outperforming embedding RAG (0.86) and full-note approaches (0.79). It demonstrated a >70% reduction in token usage and inference time, with average inference times of 4.95 seconds per note compared to 17.41 seconds for embedding RAG and 20.08 seconds for full-note methods.
+
+## **Conclusion** ##
+CLEAR significantly improves clinical information extraction efficiency and performance by leveraging clinical entities for retrieval, leading to substantial reductions in token usage and inference time while maintaining or improving accuracy compared to modern RAG and full-note methods.
+
+## **Relevance to Our Team** ##
+This research offers a highly efficient and accurate method for clinical information extraction, which could be invaluable for teams working with large volumes of EHR data.The reduced token usage and inference time make it a practical solution for real-world clinical applications, potentially streamlining research, quality improvement, and predictive modelling efforts by providing a more affordable and scalable approach to processing clinical text.
+
+# **Summary of AI with Agency in Healthcare** #
+
+## **Problem Statement** ##
+The healthcare industry faces significant operational challenges, including high administrative burdens, inefficiencies in patient care, resource allocation, and administrative processes, leading to increased costs and suboptimal patient outcomes. Current AI systems often rely on fixed rules, lacking the adaptability and autonomy needed to navigate the complexity of real-time healthcare environments. The core problem is the need for an intelligent system that can learn, evolve, and operate with autonomy to ease administrative burdens, support clinical decision-making, and streamline operations.
+
+## **Algorithms Used** ##
+The paper primarily discusses the application of agentic AI, which utilises machine learning (ML) algorithms to adapt to real-time healthcare environments. These systems are goal-driven and continuously update their behaviour based on new information.
+Specific mention is made of AI-powered natural language processing and voice recognition technologies for medical transcription ,predictive models for patient risk identification, and AI-based monitoring systems for vital signs.
+For surgical operations, robotic-assisted procedures are mentioned, with agentic robotic systems learning from sensor feedback to adjust actions dynamically.
+The YOLOv5s model is noted for its effectiveness in clinical imaging tasks.
+
+## **Datasets** ##
+The paper implies the use of various healthcare datasets, including
+routine data for continuous learning,
+large datasets for training AI models in areas like sepsis detection ,claims data for identifying inconsistencies and fraud, historical admission rates, seasonal illness patterns, and external factors for predicting resource needs, patient history and genetic information for medication management, and imaging data for diagnostic purposes .
+Real-time patient data and streaming patient data are crucial for agentic AI systems to refine treatment strategies and make dynamic adjustments.
+
+## **Model Training and Testing** ##
+Agentic AI systems are trained to continuously learn from routine data and adjust responses to evolving healthcare demands. They adapt their behaviour as new information comes in. This involves recalibrating detection thresholds over time based on behavioural data for mental health applications and autonomously learning from each new imaging dataset to improve interpretive accuracy. The systems are designed to continuously update their diagnostic models based on real-world clinical data.
+
+## **Results** ##
+Agentic AI offers significant benefits, including reducing human error, enhancing efficiency, streamlining workflows, and lowering administrative workload. It can lower cognitive workload by up to 52% and identify patients at risk, leading to fewer hospitalisations and better outcomes. In administrative tasks, AI-driven automation significantly reduces manual workloads and frees up time for direct patient care.
+AI-powered CDSS has enhanced diagnostic accuracy, reduced medical errors, and improved patient outcomes, with systems leading to a 5% change in treatment decisions]. AI in diagnostic imaging has surpassed human radiologists in detecting certain diseases and improved tuberculosis screening. Economically, agentic AI has the potential to contribute significantly to the US healthcare system annually by optimising cost structures, reducing hospital readmissions, and automating administrative tasks.
+
+## **Conclusion** ##
+Agentic AI represents a transformative approach in healthcare, moving beyond static rules to create adaptive, autonomous systems that continuously learn and evolve. This shift is crucial for addressing the industry's complex challenges, improving efficiency, enhancing clinical decision-making, and reducing costs. By integrating autonomy and adaptability, agentic AI can optimise patient care, streamline operations, and foster a more patient-centered and financially sustainable healthcare system.
+
+## **Relevance to Our Team** ##
+For our team, the paper highlights the importance of developing AI systems that are not just automated but are agentic, capable of continuous learning and adaptation. This means focusing on models that can dynamically adjust to real-time data, personalize interventions, and proactively refine workflows. The emphasis on ethical considerations, explainability, and interoperability is also crucial for successful implementation and user trust.
