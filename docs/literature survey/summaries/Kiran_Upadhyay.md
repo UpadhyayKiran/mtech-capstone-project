@@ -257,3 +257,143 @@ Although BioBERT achieves state-of-the-art performance across multiple biomedica
 This paper is highly relevant to our project because it demonstrates how domain-specific language models improve biomedical text understanding. Our proposed system processes clinical documents and medical reports using NLP and embeddings. BioBERT provides a strong foundation for biomedical entity extraction, document understanding, and retrieval in our RAG pipeline, improving evidence-based answer generation.
 
 ---
+
+# **Title: SciBERT: A Pretrained Language Model for Scientific Text**
+
+### **Problem Statement**
+
+The paper addresses the challenge of applying general NLP models (like BERT) to scientific documents. Scientific text contains domain-specific vocabulary and structure, making general pretrained models less effective. The study proposes a specialized language model trained on scientific literature to improve performance on scientific NLP tasks such as entity recognition, classification, and relation extraction.
+
+### **Algorithms Used**
+
+* Transformer-based architecture (BERT framework)
+* Domain-specific pretraining on scientific corpus
+* WordPiece tokenization with new scientific vocabulary (SciVocab)
+* Fine-tuning strategies for NLP tasks
+* Task-specific neural models for classification and tagging
+
+### **Datasets**
+
+* 1.14 million scientific papers from Semantic Scholar
+* 3.17 billion tokens
+* Domains:
+
+  * 82% biomedical
+  * 18% computer science
+* Evaluation tasks:
+
+  * Named Entity Recognition (NER)
+  * Text Classification
+  * Relation Extraction
+  * Dependency Parsing
+  * PICO extraction from clinical trials
+
+### **Model Training and Testing**
+
+* Model pretrained using masked language modeling and sentence prediction.
+* Scientific vocabulary constructed using SentencePiece.
+* Training performed using TPU hardware.
+* Performance evaluated on multiple scientific NLP benchmarks.
+* Compared against BERT-Base and BioBERT.
+
+### **Results**
+
+* SciBERT significantly outperforms BERT-Base on scientific tasks.
+* Achieved state-of-the-art results on multiple datasets.
+* Improved performance in:
+
+  * Biomedical text processing
+  * Computer science literature tasks
+  * Scientific entity extraction and classification
+* Domain-specific vocabulary improves model accuracy.
+
+### **Conclusions**
+
+The authors conclude that domain-specific pretraining significantly improves NLP performance for scientific documents. SciBERT provides better contextual understanding of technical terminology and can serve as a general resource for scientific NLP applications. Future work includes scaling the model and improving domain coverage.
+
+### **Open Questions**
+
+* Training domain-specific models requires high computational cost.
+* More domain coverage and larger models could improve performance further.
+* Impact of domain mixture and vocabulary design needs further study.
+
+### **Relevance to Our Team**
+
+This paper is highly relevant to our project on AI for clinical research and RAG pipelines. It shows how domain-specific language models improve information extraction from scientific and medical documents. The approach can help our system better process clinical papers, extract entities, and generate evidence-based answers from medical literature.
+
+---
+
+# **Title: ClinicalBERT: Modeling Clinical Notes and Predicting Hospital Readmission**
+
+### **Problem Statement**
+
+The paper addresses the challenge of utilizing **unstructured clinical notes** from electronic health records (EHRs) for medical prediction tasks. Traditional machine learning models mainly use structured data (lab values, medications), while clinical notes contain rich but complex information. The study aims to develop a model that effectively learns representations from clinical notes to predict **30-day hospital readmission risk** and support clinical decision-making.
+
+### **Algorithms Used**
+
+The study proposes **ClinicalBERT**, a transformer-based language model built on BERT architecture and specialized for clinical text.
+
+Key techniques include:
+
+* Transformer encoder with self-attention mechanism
+* Masked Language Modeling (MLM)
+* Next Sentence Prediction (NSP)
+* Domain-specific pretraining on clinical notes
+* Fine-tuning for readmission prediction
+* Attention-based interpretability
+
+The model learns contextual embeddings from clinical text and predicts readmission probability using a classification layer.
+
+### **Datasets**
+
+The model is trained and evaluated using:
+
+* **MIMIC-III Dataset**
+
+  * ~58,000 hospital admissions
+  * ~2 million clinical notes
+  * ICU patient records
+  * Data from Beth Israel Deaconess Medical Center
+
+The dataset includes physician notes, nursing reports, discharge summaries, and patient history.
+
+### **Model Training and Testing**
+
+* Pretrained using masked language modeling and next sentence prediction.
+* Fine-tuned for predicting 30-day hospital readmission.
+* Evaluation metrics:
+
+  * AUROC (Area Under ROC Curve)
+  * AUPRC (Area Under Precision-Recall Curve)
+  * Recall at 80% precision
+* Compared against baseline models:
+
+  * Bag-of-words
+  * Word2Vec
+  * FastText
+  * Bi-LSTM
+  * Standard BERT
+
+### **Results**
+
+* ClinicalBERT significantly outperforms traditional models and standard BERT.
+* Achieves better prediction accuracy and recall for hospital readmission.
+* Captures semantic relationships between medical concepts.
+* Provides interpretable predictions using attention weights.
+* Demonstrates improved clinical language modeling performance.
+
+### **Conclusions**
+
+The authors conclude that domain-specific language models trained on clinical text improve medical prediction performance. ClinicalBERT provides accurate clinical representations, improves hospital readmission prediction, and can support various healthcare applications such as mortality prediction and diagnosis estimation.
+
+### **Open Questions**
+
+* Performance depends on hospital-specific data; models may need retraining for different institutions.
+* Handling extremely long clinical notes remains challenging.
+* More research needed on large-scale clinical deployment.
+
+### **Relevance to Our Team**
+
+This paper is highly relevant to our project on **AI agents for clinical research using RAG and medical document processing**. It demonstrates how domain-specific language models extract meaningful knowledge from unstructured medical documents. The methodology supports clinical information extraction, entity understanding, and predictive modeling, which aligns with our system for evidence-based medical question answering using NLP, embeddings, and retrieval pipelines.
+
+---
