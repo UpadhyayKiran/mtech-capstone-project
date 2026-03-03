@@ -26,6 +26,11 @@ Results:
 ## **Conclusion & Relevance:** #
 AI agents outperform base LLMs when architecture matches task complexity. The findings guide our team in designing structured, tool-augmented agent systems with careful validation.
 
+Reference Link - https://pmc.ncbi.nlm.nih.gov/articles/PMC12407621/ ,
+Year - 2025 ,
+Author - Alon Gorenshtein,Mahmud Omar, et al.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # **Bio-regulatory Event Extraction using LLMs** #
 
@@ -54,7 +59,11 @@ LLMs show promising performance in bio-regulatory event extraction, particularly
 ## **Relevance to Our Team** ##
 This paper is highly relevant as it explores the application of LLMs in a specialised biomedical NLP task, which aligns with our interest in leveraging advanced AI for scientific data extraction. The insights into LLM performance in low-resource domains, prompt engineering, and the comparison with traditional methods provide valuable guidance for developing similar solutions and addressing their inherent challenges.
 
+Reference Link - https://pmc.ncbi.nlm.nih.gov/articles/PMC11529424/,
+Year - 2024,
+Author - Xinzhi Yao , Zhihan He , Jingbo Xia 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # **Foundational Architecture for AI Agents in Healthcare** #
 
@@ -89,7 +98,11 @@ This paper is highly relevant as it outlines a foundational architecture for AI 
 The emphasis on multimodal data integration, autonomous decision-making, and adaptive learning provides a roadmap for designing robust and context-aware AI solutions.
 Understanding the challenges in implementation, such as data privacy, ethical considerations, and regulatory adaptation, is crucial for our team's strategic planning and development efforts.
 
+Reference Link - https://www.sciencedirect.com/science/article/pii/S2666379125004471 ,
+Year - 2025 ,
+Fei Liu ,Yue Niu, et al.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # **The Levels of Evidence and their role in Evidence-Based Medicine** #
 
@@ -112,6 +125,11 @@ Understanding levels of evidence is vital for EBM, helping prioritise informatio
 ## **Relevance to Our Team:** ##
 This framework helps us critically appraise research, strategically design studies, and focus on improving research quality by incorporating proper methodologies.
 
+Reference Link - https://pmc.ncbi.nlm.nih.gov/articles/PMC3124652/,
+Year - 2011,
+Author - Patricia B Burns,Rod J Rohrich,Kevin C Chung
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # **Evidence-Based Medicine: Navigating Uncertainty** #
 Problem Statement
@@ -139,6 +157,12 @@ Evidence-based medicine offers a robust, five-step framework to navigate the unc
 
 ## **Relevance to Our Team** ##
 This paper is highly relevant for our team involved in healthcare, research, or evidence synthesis, as it outlines a foundational approach to decision-making in a complex information environment. It provides a clear, systematic methodology for evaluating and applying scientific evidence, which is crucial for developing guidelines, conducting research, or informing clinical practice. The emphasis on critical appraisal and structured questioning can enhance the rigour and effectiveness of our work.
+
+Reference Link - https://www.sciencedirect.com/science/article/pii/S2341287925002649,
+Year - 2025,
+Author - Rafael Martín-Masot a, Carlos Ochoa Sangrador,et al.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # **Clinical Entity Augmented Retrieval (CLEAR) for Information Extraction** #
 
@@ -172,7 +196,13 @@ CLEAR significantly improves clinical information extraction efficiency and perf
 ## **Relevance to Our Team** ##
 This research offers a highly efficient and accurate method for clinical information extraction, which could be invaluable for teams working with large volumes of EHR data.The reduced token usage and inference time make it a practical solution for real-world clinical applications, potentially streamlining research, quality improvement, and predictive modelling efforts by providing a more affordable and scalable approach to processing clinical text.
 
-# **Summary of AI with Agency in Healthcare** #
+Reference Link - https://www.nature.com/articles/s41746-024-01377-1#Sec8,
+Year - 2025,
+Author - Ivan Lopez,Akshay Swaminathan,Karthik Vedula, et al.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# **AI with Agency in a vision for adaptive, efficient, and ethical Healthcare** #
 
 ## **Problem Statement** ##
 The healthcare industry faces significant operational challenges, including high administrative burdens, inefficiencies in patient care, resource allocation, and administrative processes, leading to increased costs and suboptimal patient outcomes. Current AI systems often rely on fixed rules, lacking the adaptability and autonomy needed to navigate the complexity of real-time healthcare environments. The core problem is the need for an intelligent system that can learn, evolve, and operate with autonomy to ease administrative burdens, support clinical decision-making, and streamline operations.
@@ -201,3 +231,9 @@ Agentic AI represents a transformative approach in healthcare, moving beyond sta
 
 ## **Relevance to Our Team** ##
 For our team, the paper highlights the importance of developing AI systems that are not just automated but are agentic, capable of continuous learning and adaptation. This means focusing on models that can dynamically adjust to real-time data, personalize interventions, and proactively refine workflows. The emphasis on ethical considerations, explainability, and interoperability is also crucial for successful implementation and user trust.
+
+Reference Link - https://pmc.ncbi.nlm.nih.gov/articles/PMC12092461/,
+Year - 2025,
+Author - Vasco Gerardo Hinostroza Fuentes, et al.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
