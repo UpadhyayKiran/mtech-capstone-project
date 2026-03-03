@@ -32,6 +32,10 @@ Future work includes improving retrieval efficiency, handling noisy retrieved do
 
 This paper directly supports our project’s RAG pipeline for clinical document analysis. The retrieval-based framework aligns with our approach of retrieving relevant medical text chunks and generating evidence-based responses from external knowledge sources.
 
+## **Reference:**
+
+Patrick Lewis et al.,	2020,	NeurIPS Proceedings,	https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
+
 ---
 
 # **Title: REALM: Retrieval-Augmented Language Model Pre-Training**
@@ -67,6 +71,10 @@ Future work includes scaling retrieval databases and improving retrieval quality
 ## **Relevance to Our Team**
 
 REALM provides foundational support for our system’s embedding-based retrieval and knowledge access mechanisms. It justifies using external medical knowledge sources rather than storing all knowledge in model parameters.
+
+## **Reference:**
+
+Kelvin Guu et al.,	2020,	ICML (PMLR Proceedings),	https://proceedings.mlr.press/v119/guu20a.html
 
 ---
 
@@ -104,6 +112,10 @@ Future work includes improving passage ranking and handling irrelevant retrieval
 
 This paper supports our design of retrieving relevant medical document chunks before generating responses. It validates the importance of retrieval-based question answering for evidence-based systems.
 
+## **Reference:**
+
+Gautier Izacard & Edouard Grave,	2021,	ACL Anthology (EACL 2021 Proceedings),	https://aclanthology.org/2021.eacl-main.74/
+
 ---
 
 # **Title: Atlas: Few-shot Learning with Retrieval Augmented Language Models**
@@ -140,6 +152,10 @@ Future work includes improving retrieval quality and scaling retrieval systems f
 
 Atlas supports our system design where limited labeled clinical data can be supplemented using retrieval from external medical documents. It helps improve evidence-based response generation with minimal training data.
 
+## **Reference:**
+
+Izacard et al.,	2023,	Journal of Machine Learning Research (JMLR),	https://www.jmlr.org/papers/v24/23-0037.html
+
 ---
 
 # **Title: Improving Language Models by Retrieving from Trillions of Tokens**
@@ -175,6 +191,10 @@ The study suggests future work on further improving retrieval efficiency, handli
 ## **Relevance to Our Project**
 
 This paper is highly relevant to our project on building an AI agent for clinical research using a Retrieval-Augmented Generation (RAG) pipeline. The proposed RETRO architecture demonstrates how retrieving relevant document chunks from large external knowledge sources improves factual accuracy and model performance. Our project similarly uses vector embeddings, document retrieval, and generation to provide evidence-based responses from medical documents. The chunk-based retrieval mechanism and external knowledge integration proposed in this paper support the design of our system for processing unstructured medical documents and generating reliable answers. The study provides strong theoretical justification for using retrieval-based methods to reduce hallucination and improve decision support in clinical applications.
+
+## **Reference:**
+
+Borgeaud et al.,	2022,	ICML 2022 (PMLR Proceedings), https://proceedings.mlr.press/v162/borgeaud22a.html
 
 ---
 
@@ -256,6 +276,10 @@ Although BioBERT achieves state-of-the-art performance across multiple biomedica
 
 This paper is highly relevant to our project because it demonstrates how domain-specific language models improve biomedical text understanding. Our proposed system processes clinical documents and medical reports using NLP and embeddings. BioBERT provides a strong foundation for biomedical entity extraction, document understanding, and retrieval in our RAG pipeline, improving evidence-based answer generation.
 
+## **Reference:**
+
+Jinhyuk Lee et al.,	2019,	Bioinformatics (Oxford University Press), https://doi.org/10.1093/bioinformatics/btz682
+
 ---
 
 # **Title: SciBERT: A Pretrained Language Model for Scientific Text**
@@ -320,6 +344,10 @@ The authors conclude that domain-specific pretraining significantly improves NLP
 ### **Relevance to Our Team**
 
 This paper is highly relevant to our project on AI for clinical research and RAG pipelines. It shows how domain-specific language models improve information extraction from scientific and medical documents. The approach can help our system better process clinical papers, extract entities, and generate evidence-based answers from medical literature.
+
+## **Reference:**
+
+Iz Beltagy et al.,	2019,	EMNLP 2019 (ACL),	https://arxiv.org/abs/1903.10676
 
 ---
 
@@ -395,5 +423,118 @@ The authors conclude that domain-specific language models trained on clinical te
 ### **Relevance to Our Team**
 
 This paper is highly relevant to our project on **AI agents for clinical research using RAG and medical document processing**. It demonstrates how domain-specific language models extract meaningful knowledge from unstructured medical documents. The methodology supports clinical information extraction, entity understanding, and predictive modeling, which aligns with our system for evidence-based medical question answering using NLP, embeddings, and retrieval pipelines.
+
+## **Reference:**
+
+Kexin Huang et al.,	2019,	CHIL 2020 Workshop (ACM) / arXiv,	https://arxiv.org/abs/1904.05342
+
+---
+
+# **Title: ReAct: Synergizing Reasoning and Acting in Language Models**
+
+### **Problem Statement**
+
+The paper addresses limitations of large language models (LLMs) where reasoning and action generation are treated separately. Traditional reasoning approaches such as Chain-of-Thought perform internal reasoning but cannot interact with external environments, leading to hallucinations and outdated knowledge. Conversely, action-based models interact with environments but lack structured reasoning. The study proposes a unified framework that combines reasoning and action to improve task-solving performance, factual grounding, and decision-making.
+
+### **Algorithms Used**
+
+The study introduces **ReAct (Reasoning + Acting)**, a prompting-based framework where language models generate both reasoning traces and actions in an interleaved manner. The model produces reasoning steps (thoughts) to guide decision-making and performs actions such as retrieving information from external sources. The process follows an iterative sequence:
+
+```
+Thought → Action → Observation → Thought → Action
+```
+
+The framework uses few-shot prompting with large language models such as PaLM and GPT to integrate reasoning with environment interaction.
+
+### **Datasets**
+
+The framework is evaluated on multiple reasoning and decision-making benchmarks including:
+
+* **HotpotQA** — multi-hop question answering
+* **FEVER** — fact verification
+* **ALFWorld** — interactive decision-making environment
+* **WebShop** — web-based task completion environment
+
+These tasks require reasoning, planning, and information retrieval.
+
+### **Model Training and Testing**
+
+The model uses few-shot prompting with human-annotated reasoning and action trajectories. It interacts with external tools such as Wikipedia search APIs and environment simulators. Performance is evaluated based on accuracy, success rate, and interpretability across different tasks. 
+
+### **Results**
+
+The framework demonstrates improved performance compared to reasoning-only and action-only methods. It reduces hallucinations, improves factual grounding, increases success rates in decision-making tasks, and provides interpretable reasoning traces. The model dynamically retrieves relevant information during reasoning, leading to more reliable outputs.
+
+### **Conclusions**
+
+The authors conclude that integrating reasoning and action improves the reliability, interpretability, and performance of language models. ReAct enables models to dynamically retrieve information and update reasoning during task execution, making them more effective for complex real-world tasks.
+
+### **Open Questions**
+
+Future work includes scaling the framework with larger datasets, combining ReAct with reinforcement learning, improving reasoning and action generation through fine-tuning, and extending the framework to more complex environments.
+
+### **Relevance to Our Team**
+
+This work is highly relevant to our RAG-based clinical research agent. ReAct provides a framework for iterative reasoning and retrieval, which can improve evidence-based answer generation, reduce hallucination, and support reliable decision-making in medical document processing.
+
+## **Reference:**
+
+Shunyu Yao et al.,	2023,	ICLR (OpenReview),	https://openreview.net/forum?id=WE_vluYUL-X
+
+---
+
+# **Title: Toolformer: Language Models Can Teach Themselves to Use Tools (NeurIPS 2023)**
+
+### **Problem Statement**
+
+The paper addresses limitations of large language models in performing tasks requiring factual retrieval, numerical computation, and access to external knowledge. LLMs often generate hallucinated or outdated information and struggle with precise calculations. Existing tool-augmented approaches require extensive human supervision or task-specific design. The study proposes a self-supervised framework that enables language models to autonomously learn when and how to use external tools to improve reasoning and factual accuracy.
+
+### **Algorithms Used**
+
+The study introduces **Toolformer**, a self-supervised framework that enables language models to use external tools through API calls. The model learns to decide when to call a tool, which tool to use, what input to provide, and how to integrate the output into predictions.
+
+The training pipeline consists of:
+
+```
+Sample API Calls → Execute Tools → Filter Useful Calls → Fine-tune Model
+```
+
+The model retains only tool calls that improve prediction performance. Tools used include a calculator, question answering system, Wikipedia search engine, machine translation system, and calendar API.
+
+### **Datasets**
+
+The model is evaluated on multiple tasks requiring reasoning and external knowledge, including:
+
+* **LAMA benchmark** — factual knowledge completion
+* **Mathematical reasoning benchmarks** — ASDiv, SVAMP, MAWPS
+* **Question answering datasets** — WebQuestions, TriviaQA
+* **Multilingual question answering** — MLQA
+* **Temporal reasoning datasets**
+
+These datasets evaluate factual accuracy, reasoning ability, and decision-making performance.
+
+### **Model Training and Testing**
+
+The approach uses a pretrained language model (GPT-J) and augments training data with API calls that improve prediction accuracy. The model is fine-tuned on this augmented dataset and evaluated in zero-shot settings across multiple downstream tasks.
+
+### **Results**
+
+Toolformer improves mathematical reasoning, factual accuracy, and zero-shot performance by leveraging external tools. It reduces hallucination and achieves performance competitive with larger models while maintaining core language modeling capabilities.
+
+### **Conclusions**
+
+The authors conclude that language models can autonomously learn to use external tools through self-supervision. Toolformer enhances reasoning, factual grounding, and decision-making by integrating tool usage into language model predictions without requiring task-specific supervision.
+
+### **Open Questions**
+
+Future work includes enabling multi-step tool chaining, supporting interactive tool usage, improving sample efficiency of tool learning, integrating domain-specific tools, and considering computational costs of tool usage.
+
+### **Relevance to Our Team**
+
+This work is highly relevant to our RAG-based clinical research agent. Toolformer provides a framework for autonomous tool usage and external knowledge integration, which can improve factual grounding, reduce hallucination, and enhance reliability in medical document analysis and clinical decision support.
+
+## **Reference:**
+
+Timo Schick et al.,	2023,	NeurIPS,	https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html
 
 ---
