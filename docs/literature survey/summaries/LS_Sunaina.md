@@ -237,3 +237,103 @@ Year - 2025,
 Author - Vasco Gerardo Hinostroza Fuentes, et al.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# **Biomedical Relation Extraction with GPT Models** #
+## **Problem Statement** ##
+Relation Extraction (RE) in the biomedical domain is a crucial Natural Language Processing (NLP) task focused on identifying semantic relationships between biomedical entities from large data collections like PubMed articles. The complexity of RE increases with the number of entities involved in a relation.
+Traditional methods, including co-occurrence, rule-based, and early machine learning approaches, faced limitations such as false positives, low recall, and the need for extensive annotated data .This paper investigates the effectiveness of recent large language models (LLMs), specifically GPT-3.5-turbo and GPT-4, for this task.
+
+## **Algorithms Used** ##
+The study primarily utilised GPT-3.5-turbo and GPT-4, which are generative pre-trained transformer models, for relation extraction.
+These models are pre-trained on large Web corpora using auto-regressive language modelling . The researchers developed various prompts for zero-shot and one-shot experiments to guide these models in classifying relations.
+
+## **Datasets** ##
+Three standard biomedical datasets were used: EU-ADR, Gene Associations Database (GAD), and ChemProt . For each dataset, three versions were created: masked entities, original unmasked entities, and expanded entities where abbreviations were replaced with full terms.
+
+## **Model Training and Testing** ##
+    • The models were tested using zero-shot and one-shot learning approaches with different prompts and temperature settings (0 and 1).
+    • The chat completion model from the GPT API was used for the experimental setup.
+    • Performance was evaluated using standard metrics like precision, recall, and F1-score, and compared against BioBERT and PubMedBERT .
+
+## **Results** ##
+GPT-3.5-turbo achieved F1-scores ranging from 0.498 to 0.809, while GPT-4 achieved a highest F1-score of 0.84 .GPT models performed better on unmasked and expanded data versions compared to masked versions .For certain experiments, GPT's performance was comparable to BioBERT and PubMedBERT .GPT-4 generally outperformed GPT-3.5-turbo, particularly on EU-ADR, GAD dataset 1, and ChemProt .
+
+## **Conclusion** ##
+The study successfully demonstrated the capability of GPT models (GPT-3.5-turbo and GPT-4) to perform biomedical relation extraction. It highlighted that GPT's performance is superior on unmasked and expanded data compared to masked data and that the models can achieve results comparable to specialized BERT-like models in some cases. The research provides a foundational understanding for using GPT for biomedical relation extraction.
+
+## **Relevance to Our Team** ##
+This research is highly relevant as it showcases the potential of large language models for complex biomedical NLP tasks. Understanding how GPT models perform with different data formats (masked vs. unmasked/expanded) and prompt engineering strategies can inform our team's approach to similar challenges. The findings suggest that fine-tuning GPT models or using zero-shot classification with embeddings could further enhance performance, providing clear directions for future work in leveraging LLMs for biomedical text processing.
+
+Reference Link - https://pmc.ncbi.nlm.nih.gov/articles/PMC11141827/,
+Year - 2024
+Author - Jeffrey Zhang , Maxwell Wibert, et al.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# **Proof-of-concept study of a small language model chatbot for breast cancer decision support – a transparent, source-controlled, explainable and data-secure approach** #
+
+## **Problem Statement** ##
+Large Language Models (LLMs) offer promise for decision support in breast cancer care; however, their clinical use is restricted by concerns over source control, explainability of decision-making, and health data security. Small Language Models (SLMs) are being explored to address these challenges by providing transparent, source-controlled, explainable, and data-secure approaches.
+
+## **Algorithms Used** ##
+The study utilized an open-source SLM, specifically Mixtral 8×7B instruct, in an unquantified state. The technological design incorporates Retrieval-Augmented Generation (RAG) which introduces an upstream search engine to interact with a static information database, such as clinical guidelines . It employs a dual retrieval mechanism using AI-embedding techniques with cosine similarity and the BM25 algorithm, followed by a mutual re ranking module .
+
+## **Datasets** ##
+The models were evaluated using 20 fictional patient profiles that comprehensively represent the spectrum of breast carcinoma subtypes, adhering to the German Association of Gynecology and Obstetrics (DGGG) guideline (version 4.4, May 2021) . These profiles cover diverse immuno- and histopathological subtypes, as well as pre- and postmenopausal statuses.
+
+## **Model Training and Testing** ##
+Initial clinical accuracy was assessed by comparing the BC-SLM's treatment recommendations with those from a conventional multidisciplinary gynecological tumor board (considered the gold standard) . The BC-SLM was also compared against two publicly available LLMs, ChatGPT3.5 and 4.0. The study evaluated 100 binary treatment recommendations across five treatment modalities.
+
+## **Results** ##
+The BC-SLM achieved an overall concordance of 86% (κ=0.721, p<0.001) with the multidisciplinary tumor board, which is comparable to ChatGPT4 (90%, κ=0.820) and ChatGPT3.5 (83%, κ=0.661) . Specific concordance for the BC-SLM ranged from 65% to 100% across different treatment modalities .The BC-SLM demonstrated local functionality, adherence to guidelines, and provided referenced sections for its decision-making .
+
+## **Conclusion** ##
+The tailored BC-SLM shows promising initial clinical accuracy and technical functionality, offering a proof-of-concept for adapting SLMs to oncological guidelines. This approach ensures decision transparency, explainability, source control, and data security, marking a crucial step towards clinical validation and safe use of language models in clinical oncology .
+
+## **Relevance to Our Team** ##
+This study highlights the potential of SLMs, particularly with RAG, to address critical issues in clinical decision support like data security and explainability. The methodology of tailoring an open-source SLM to specific medical guidelines and achieving comparable accuracy to larger LLMs demonstrates a viable path for developing secure and transparent AI tools in healthcare. This is particularly relevant for teams focused on integrating AI into clinical workflows while maintaining high standards of data privacy and interpretability.
+
+Reference Link -https://pmc.ncbi.nlm.nih.gov/articles/PMC11464535/#:~:text=Additionally%2C%20it%20achieves%20concordance%20levels,international%20diagnostic%20and%20treatment%20standards,
+year - 2024
+Author -Sebastian Griewing, Fabian Lechner ,et al
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# **Small language models learn enhanced reasoning skills from medical textbooks** #
+
+## **Problem Statement** ##
+Small Language Models (SLMs) face challenges in multi-step reasoning for complex medical tasks due to their limited parameters, despite their advantages in privacy and hardware constraints compared to Large Language Models (LLMs) . Existing medical SLMs often lack consistent reasoning abilities during pre-training, and current training methods are inefficient and yield limited improvements for medical reasoning.
+
+## **Algorithms Used** ##
+The study introduces Meerkat, a new family of medical SLMs, built upon state-of-the-art LMs like Mistral-7B and Llama-3-8B. The core algorithm involves an effective and efficient training method that extracts high-quality Chain-of-Thought (CoT) reasoning paths from medical textbooks and combines them with diverse instruction-following datasets.
+GPT-4 was specifically used to generate CoT reasoning data from MedQA questions and medical textbooks.
+
+## **Datasets** ##
+The training dataset comprises 441K examples, including CoT reasoning paths extracted from 18 medical textbooks and diverse instruction-following datasets within the medical domain.
+Key datasets include
+    • MedQA-CoT (9.3K examples),
+    • MedBooks-18-CoT (77.6K examples), and
+    • MedMCQA,
+    • LiveQA,
+    • MedicationQA,
+    • ChatDoctor-cleaned,
+    • MedQA-dialog, and
+    • MedInstruct-52K.
+      
+## **Model Training and Testing** ##
+Fine-tuning was conducted on open-source SLMs using the curated dataset . The Meerkat models were initialised with Mistral-7B-v0.1 and Meta-Llama-3-8B-Instruct weights. The 7B model was trained for three epochs on eight A100 GPUs (approximately 1 day), and the 8B model on Google TPUs. Performance was tested across six exam datasets, including MedQA, USMLE, Medbullets-4/5, MedMCQA, and MMLU-Medical, and on NEJM Case Challenges.
+
+## **Results** ##
+Meerkat-7B and Meerkat-8B outperformed their counterparts by 22.3% and 10.6% across six exam datasets, respectively. Meerkat-7B was the first 7B model to exceed the USMLE passing threshold of 60%. Meerkat-8B improved scores on the NEJM Case Challenge from 13 to 20, surpassing the human score of 13.7 . Expert evaluations showed Meerkat-8B's superiority in completeness, factuality, clarity, and logical consistency.
+
+## **Conclusion** ##
+Meerkat models demonstrate robust reasoning capabilities, addressing the gap between performance and security for medical AI. The CoT fine-tuning approach, especially with textbook augmentation, is highly effective and efficient, enabling smaller models to tackle complex reasoning tasks . The models are suitable for on-premises deployment due to lower hardware requirements.
+
+## **Relevance to Our Team** ##
+This paper is highly relevant as it demonstrates an effective and efficient method for enhancing reasoning capabilities in SLMs for medical applications. The use of CoT reasoning paths from medical textbooks and diverse instruction-following datasets provides a robust framework for developing medical AI. The success of Meerkat models, particularly their ability to run on high-end PCs, makes them practical for deployment in various healthcare settings, aligning with the need for accessible and privacy-preserving AI solutions in medicine.
+
+Refernec Link - https://pmc.ncbi.nlm.nih.gov/articles/PMC12048634/#:~:text=Abstract,effective%20and%20efficient%20training%20method ,
+Year - 2025 
+Author - Hyunjae Kim , Hyeon Hwang, et al.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
