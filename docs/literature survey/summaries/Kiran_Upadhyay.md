@@ -538,3 +538,341 @@ This work is highly relevant to our RAG-based clinical research agent. Toolforme
 Timo Schick et al.,	2023,	NeurIPS,	https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html
 
 ---
+
+# **Title: OpenBioLink: A Benchmarking Framework for Large-Scale Biomedical Link Prediction**
+
+### **Problem Statement**
+
+The paper addresses the lack of standardized, high-quality benchmarks for evaluating link prediction algorithms in large-scale biomedical knowledge graphs. While many machine learning and embedding-based methods have been proposed for predicting missing links in knowledge networks, existing benchmarks either suffer from information leakage, lack biomedical specificity, or do not reflect the heterogeneous and multi-relational nature of biomedical data. The study aims to introduce a robust, transparent, and reproducible benchmarking framework tailored specifically for biomedical link prediction tasks. 
+
+### **Algorithms Used**
+
+The paper does not propose a new prediction algorithm. Instead, it introduces **OpenBioLink**, a modular benchmarking framework consisting of three main components:
+
+1. **Graph creation module** — constructs biomedical knowledge graphs from multiple public data sources.
+2. **Train–test split module** — creates robust splits while preventing trivial inference and information leakage.
+3. **Training and evaluation module** — evaluates link prediction models using standardized metrics.
+
+The framework supports evaluation using graph embedding models such as:
+
+* TransE
+* TransR
+
+and integrates with external libraries like PyKEEN for training and evaluation.
+
+Evaluation metrics include:
+
+* Hits@k
+* Mean Reciprocal Rank (MRR)
+* ROC AUC
+* Precision-Recall AUC
+
+### **Datasets**
+
+The OpenBioLink benchmark dataset includes:
+
+* **7 node types**
+* **30 edge types**
+* Multiple biomedical entities (genes, diseases, proteins, anatomy, etc.)
+* Both directed and undirected graph versions
+* Quality-filtered subsets (high, medium, low confidence)
+
+The dataset ensures:
+
+* No trivial inference between train and test sets
+* No inverse relation leakage
+* Typed negative sampling for robust evaluation
+
+This creates a challenging and realistic biomedical link prediction environment. 
+
+### **Model Training and Testing**
+
+Baseline experiments were conducted using graph embedding models (TransE and TransR). Hyperparameter optimization was performed, and models were evaluated using standardized link prediction metrics. The framework ensures that the test set does not include trivially inferable relations and that negative samples are properly constructed.
+
+### **Results**
+
+Baseline models achieved relatively modest performance (e.g., Hits@10 around 7.5%), indicating that the benchmark is challenging and leaves significant room for algorithmic improvement. The results highlight the difficulty of large-scale biomedical link prediction and the need for more advanced methods.
+
+### **Conclusions**
+
+The authors conclude that OpenBioLink provides a standardized, transparent, and reproducible framework for evaluating biomedical link prediction methods. It addresses flaws in previous benchmarks and creates a realistic large-scale environment for algorithm development. The benchmark can support future advances in biomedical knowledge graph learning and hypothesis generation.
+
+### **Open Questions**
+
+Future work includes:
+
+* Hosting annual benchmarking events
+* Extending the dataset with additional biomedical resources
+* Evaluating more advanced embedding and rule-learning models
+* Supporting experimental validation of predicted biomedical links
+
+### **Relevance to Our Team**
+
+This paper is highly relevant to our RAG-based clinical research agent and biomedical AI system. While our project focuses on document retrieval and reasoning, biomedical link prediction can enhance knowledge discovery, drug–disease association prediction, and hypothesis generation. Integrating structured knowledge graph reasoning with our retrieval pipeline can improve clinical evidence linking and decision support capabilities.
+
+## **Reference:**
+
+A. Breit et al.,	2020,	Oxford Academic (Bioinformatics Journal),	https://doi.org/10.1093/bioinformatics/btaa274
+
+---
+
+# **Title: KGen: A Knowledge Graph Generator from Biomedical Scientific Literature**
+
+### **Problem Statement**
+
+The paper addresses the challenge of extracting structured knowledge from large volumes of unstructured biomedical scientific literature. Scientific texts contain complex sentences, implicit relations, abbreviations, and domain-specific terminology, making automatic knowledge extraction difficult. The study aims to develop a method for generating knowledge graphs from biomedical texts by identifying entities and relationships and linking them to biomedical ontologies for knowledge representation and discovery.
+
+### **Algorithms Used**
+
+The study introduces **KGen**, a semi-automatic framework that generates ontology-linked knowledge graphs from biomedical texts using Natural Language Processing techniques.
+
+The pipeline consists of four main steps:
+
+* **Preprocessing** — sentence splitting, co-reference resolution, abbreviation handling, and sentence simplification
+* **Triples extraction** — extracting subject–predicate–object relations using semantic role labeling and dependency parsing
+* **Ontology linking** — mapping entities and relations to biomedical ontologies using UMLS and SPARQL queries
+* **Graph generation** — constructing ontology-linked knowledge graphs using RDF triples
+
+The method combines rule-based extraction and NLP techniques for information extraction and semantic representation.
+
+### **Datasets**
+
+The method is evaluated using biomedical scientific literature abstracts related to Alzheimer’s disease. Physicians manually extracted knowledge from the same texts to compare with automatically generated knowledge graphs.
+
+### **Model Training and Testing**
+
+The system uses NLP tools such as named entity recognition, semantic role labeling, and dependency parsing for extracting relations. Extracted entities are mapped to biomedical ontologies such as the Unified Medical Language System (UMLS) and National Cancer Institute Thesaurus. The quality of generated knowledge graphs is evaluated through comparison with expert manual extraction and qualitative analysis.
+
+### **Results**
+
+The proposed method successfully extracts a large number of meaningful triples from biomedical texts and effectively links them to biomedical ontologies. The generated knowledge graphs demonstrate high quality and support knowledge discovery by representing relationships between biomedical entities.
+
+### **Conclusions**
+
+The authors conclude that semi-automatic knowledge graph generation from biomedical literature is effective for representing scientific knowledge and supporting research discovery. Ontology-linked knowledge graphs enable better analysis of biomedical concepts and relationships across studies.
+
+### **Open Questions**
+
+Future work includes improving automatic relation extraction, handling more complex biomedical texts, enhancing ontology linking methods, and extending the approach to other biomedical domains.
+
+### **Relevance to Our Team**
+
+This work is highly relevant to our RAG-based clinical research agent. The method provides a framework for extracting structured knowledge from medical research papers and representing relationships between biomedical entities. Such knowledge graphs can enhance retrieval accuracy, improve evidence linking, and support clinical reasoning in our system.
+
+## **Reference:**
+
+Rossanez et al.,	2020,	Springer,	https://doi.org/10.1186/s12911-020-01341-5
+
+---
+
+# **Title: PubMedQA: A Dataset for Biomedical Research Question Answering**
+
+### **Problem Statement**
+
+The paper addresses the challenge of building intelligent systems that can understand and reason over biomedical research literature. Existing biomedical question answering datasets are small, simple, or require limited reasoning. The authors propose a new dataset that requires models to perform complex reasoning over scientific texts, particularly involving quantitative analysis and medical evidence.
+
+### **Algorithms Used**
+
+The study proposes a biomedical question answering framework and provides baseline models including:
+
+* **BioBERT fine-tuning**
+* **Multi-phase training strategy**
+* **Pseudo-labeling and bootstrapping methods**
+* **Bag-of-Words auxiliary supervision**
+* Neural models such as:
+
+  * BiLSTM
+  * ESIM with BioELMo
+  * Shallow feature models
+
+The best performance is achieved using multi-phase fine-tuning of BioBERT.
+
+### **Datasets**
+
+The authors introduce **PubMedQA**, a biomedical QA dataset derived from PubMed articles. Each instance contains:
+
+* A research question
+* Context (abstract without conclusion)
+* Long answer (conclusion)
+* Yes/No/Maybe label
+
+Dataset composition:
+
+* **1k expert-annotated samples**
+* **61.2k unlabeled samples**
+* **211.3k automatically generated samples**
+
+The dataset focuses on reasoning over biomedical research texts.
+
+### **Model Training and Testing**
+
+Models are trained using a multi-phase approach:
+
+* Pre-training on automatically generated data
+* Bootstrapping unlabeled data using pseudo-labeling
+* Final fine-tuning on labeled dataset
+
+Performance is evaluated using accuracy and macro-F1 score. Models must reason over scientific context rather than directly extract answers.
+
+### **Results**
+
+The multi-phase BioBERT model achieves the best performance (≈68% accuracy), outperforming baseline methods. However, results remain significantly below human performance (≈78%), indicating the difficulty of biomedical reasoning tasks.
+
+### **Conclusions**
+
+The study introduces a large-scale biomedical QA dataset that requires complex reasoning over scientific texts. The dataset enables evaluation of machine reasoning ability in biomedical research and supports evidence-based decision systems. The authors conclude that more advanced reasoning methods are required to match human performance.
+
+### **Open Questions**
+
+Future work includes:
+
+* Better handling of numerical and statistical reasoning
+* Improved reasoning over scientific evidence
+* More advanced supervision techniques
+* Generation-based answer prediction
+
+### **Relevance to Our Team**
+
+This paper is highly relevant to our project on **AI-based clinical research assistants using RAG pipelines**. It provides a benchmark dataset and evaluation framework for biomedical question answering, which supports retrieval-based evidence extraction and reasoning over medical literature.
+
+## **Reference:**
+
+Qiao Jin et al.,	2019,	EMNLP-IJCNLP 2019 (ACL Anthology),	https://aclanthology.org/D19-1259/
+
+---
+
+# **Title: On Faithfulness and Factuality in Abstractive Summarization (2020)**
+
+## **Problem Statement**
+
+The paper addresses the challenge of ensuring **faithfulness and factual correctness** in abstractive text summarization models. While modern neural summarization models generate fluent and coherent summaries, they often produce **hallucinated content** — information that is not supported by the source document or is factually incorrect. The study aims to understand why hallucinations occur, how frequently they appear, and how to measure and reduce them.
+
+## **Algorithms Used**
+
+The study evaluates multiple neural summarization architectures:
+
+* **Pointer-Generator Networks (PTGEN)** — RNN-based sequence-to-sequence model with copy mechanism.
+* **Topic-aware Convolutional Sequence-to-Sequence (TCONVS2S)** — CNN-based summarization using topic representations.
+* **Transformer-based Models**
+
+  * GPT-TUNED (pretrained GPT fine-tuned for summarization)
+  * TRANS2S (Transformer encoder-decoder)
+  * BERTS2S (BERT-based encoder-decoder with pretraining)
+
+The paper also uses:
+
+* **Textual Entailment models** to measure factual consistency.
+* **Question Answering (QA) evaluation** to check information validity.
+* **Human evaluation framework** for hallucination analysis.
+
+## **Datasets**
+
+* **XSUM Dataset**
+
+  * 226,711 BBC news articles.
+  * Each article paired with a single-sentence summary.
+  * Requires highly abstractive summarization.
+
+* Human annotations for:
+
+  * Hallucination detection
+  * Faithfulness evaluation
+  * Factual correctness assessment
+
+## **Model Training and Testing**
+
+* Models trained using maximum likelihood estimation.
+* Beam search used for decoding summaries.
+* Human annotators evaluated:
+
+  * Intrinsic hallucinations (misinterpreting source content)
+  * Extrinsic hallucinations (adding unsupported information)
+  * Factual correctness of generated summaries.
+* Evaluation metrics:
+
+  * ROUGE
+  * BERTScore
+  * Textual entailment
+  * QA-based evaluation
+  * Human judgment.
+
+## **Results**
+
+* More than **70% of generated summaries contained hallucinations**.
+* Most hallucinations were **extrinsic and factually incorrect**.
+* Pretrained models (BERTS2S) produced more faithful summaries than non-pretrained models.
+* ROUGE and BERTScore showed weak correlation with factual correctness.
+* Textual entailment showed better correlation with faithfulness.
+* Pretraining improves factuality but does not eliminate hallucination.
+
+## **Conclusions**
+
+* Hallucination is a major challenge in abstractive summarization.
+* Neural text generation models prioritize fluency over factual accuracy.
+* Pretrained language models improve faithfulness but still produce errors.
+* Traditional evaluation metrics (ROUGE) are insufficient for measuring summary correctness.
+* Semantic inference-based metrics such as textual entailment are more reliable.
+
+## **Open Questions**
+
+* How to design training objectives that explicitly enforce factual correctness?
+* How to integrate external knowledge safely into summaries?
+* How to develop better automatic evaluation metrics for faithfulness?
+* How to reduce hallucinations in large language models?
+
+## **Relevance to Our Team**
+
+This paper is highly relevant to our project on **RAG-based medical document retrieval and evidence-based answering**. It highlights:
+
+* Risks of hallucination in LLM-generated responses.
+* Importance of evidence grounding from source documents.
+* Need for factual consistency verification.
+* Importance of retrieval-based methods for reliable outputs.
+
+The findings support our project design that combines document retrieval with generation to produce trustworthy medical responses.
+
+## **Reference:**
+
+Joshua Maynez et al.,	2020,	ACL,	https://arxiv.org/abs/2005.00661
+
+---
+
+# **Title: Survey of Hallucination in Natural Language Generation**
+
+### **Problem Statement**
+
+The paper addresses the problem of hallucination in Natural Language Generation (NLG), where language models generate factually incorrect or unsupported information not grounded in input data. This issue significantly affects reliability in applications such as summarization, dialogue systems, question answering, and data-to-text generation. The study aims to systematically review existing research, evaluation metrics, and mitigation methods for hallucinations in NLG systems.
+
+### **Algorithms Used**
+
+The study provides a survey of existing techniques rather than proposing a new model. It categorizes hallucinations into intrinsic hallucination (contradicting source input) and extrinsic hallucination (adding unsupported information). The paper reviews detection methods, training strategies, evaluation metrics, and mitigation techniques such as constrained decoding, knowledge grounding, and post-generation verification.
+
+### **Datasets**
+
+The paper reviews multiple datasets used across NLG tasks, including summarization datasets, machine translation benchmarks, and dialogue datasets. It discusses commonly used datasets for hallucination evaluation rather than focusing on a single dataset.
+
+### **Model Training and Testing**
+
+The survey analyzes training approaches used in literature such as reinforcement learning, factual consistency training, knowledge-grounded generation, and alignment-based evaluation. Performance is evaluated using metrics measuring factual correctness, faithfulness, and semantic consistency rather than traditional metrics like BLEU or ROUGE alone.
+
+### **Results**
+
+The study highlights that modern language models often produce fluent but factually incorrect outputs. It shows that existing evaluation metrics poorly capture hallucination and emphasizes the need for better automatic evaluation methods. The survey identifies trends in hallucination mitigation strategies and compares their effectiveness across tasks.
+
+### **Conclusions**
+
+The authors conclude that hallucination remains a major challenge in NLG systems. They emphasize the need for improved evaluation metrics, better grounding methods, and robust training strategies to enhance factual consistency and reliability of generated text.
+
+### **Open Questions**
+
+The paper suggests future work in developing standardized benchmarks, improving automatic hallucination detection methods, designing stronger factuality metrics, and improving model interpretability to understand hallucination causes.
+
+### **Relevance to Our Team**
+
+This paper provides important insights into ensuring factual correctness in language models, which is critical for our RAG-based clinical research agent. Understanding hallucination detection and mitigation techniques can help improve evidence-based answer generation, enhance model trustworthiness, and support reliable medical document analysis in our project.
+
+## **Reference:**
+
+Ziwei Ji et al.,	2023,	ACM Computing Surveys,	https://doi.org/10.1145/3571730
+
+---
