@@ -332,6 +332,13 @@ Meerkat models demonstrate robust reasoning capabilities, addressing the gap bet
 ## **Relevance to Our Team** ##
 This paper is highly relevant as it demonstrates an effective and efficient method for enhancing reasoning capabilities in SLMs for medical applications. The use of CoT reasoning paths from medical textbooks and diverse instruction-following datasets provides a robust framework for developing medical AI. The success of Meerkat models, particularly their ability to run on high-end PCs, makes them practical for deployment in various healthcare settings, aligning with the need for accessible and privacy-preserving AI solutions in medicine.
 
+## **Open Questions** ##
+1. What specific improvements are needed for performance?
+
+2. How will reinforcement learning enhance medical SLMs?
+
+3. What strategies address biases in medical AI?
+
 Refernec Link - https://pmc.ncbi.nlm.nih.gov/articles/PMC12048634/#:~:text=Abstract,effective%20and%20efficient%20training%20method ,
 Year - 2025 
 Author - Hyunjae Kim , Hyeon Hwang, et al.
