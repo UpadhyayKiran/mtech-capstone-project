@@ -876,3 +876,149 @@ This paper provides important insights into ensuring factual correctness in lang
 Ziwei Ji et al.,	2023,	ACM Computing Surveys,	https://doi.org/10.1145/3571730
 
 ---
+
+# **Title: Attention Is All You Need**
+
+### **Problem Statement**
+
+Traditional sequence models like RNNs and CNNs process data sequentially, making training slow and limiting their ability to capture long-range dependencies. The paper addresses this limitation by proposing a fully attention-based architecture that removes recurrence and convolution.
+
+---
+
+### **Algorithms Used**
+
+The paper introduces the **Transformer architecture**, which relies entirely on:
+
+* Self-Attention mechanism
+* Multi-Head Attention
+* Positional Encoding
+* Encoder-Decoder architecture
+
+The key idea is computing dependencies using attention instead of sequential processing .
+
+---
+
+### **Datasets**
+
+* WMT 2014 English-German dataset (~4.5M sentence pairs)
+* WMT 2014 English-French dataset (~36M sentence pairs)
+
+---
+
+### **Model Training and Testing**
+
+* Trained using Adam optimizer with learning rate scheduling
+* Uses positional encoding since no recurrence exists
+* Fully parallelizable → significantly faster training
+* Evaluated using BLEU score
+
+---
+
+### **Results**
+
+* Achieved **28.4 BLEU (EN-DE)** and **41.0 BLEU (EN-FR)**
+* Outperformed previous state-of-the-art models
+* Reduced training cost significantly
+
+---
+
+### **Conclusions**
+
+The Transformer demonstrates that attention alone is sufficient for sequence modeling, enabling better performance, scalability, and parallelization compared to RNN/CNN-based models.
+
+---
+
+### **Open Questions**
+
+* Handling very long sequences efficiently
+* Reducing quadratic complexity of attention
+* Improving memory efficiency
+
+---
+
+### **Relevance to Our Team**
+
+This paper forms the **core foundation of our project**:
+
+* Our AI agent uses Transformer-based models (BioBERT / BioMistral)
+* RAG pipeline relies on embeddings derived from Transformer architectures
+* Attention mechanism enables semantic understanding of clinical queries
+
+---
+
+## **Reference:**
+
+Ashish Vaswani et al.,2017,NeurIPS,https://arxiv.org/abs/1706.03762
+
+---
+
+# **Title: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding**
+
+---
+
+### **Problem Statement**
+
+Previous language models (like GPT) are unidirectional and cannot fully capture context from both left and right simultaneously. This limits performance on tasks requiring deep contextual understanding.
+
+---
+
+### **Algorithms Used**
+
+BERT introduces:
+
+* **Bidirectional Transformer Encoder**
+* **Masked Language Modeling (MLM)**
+* **Next Sentence Prediction (NSP)**
+
+These enable learning deep contextual representations .
+
+---
+
+### **Datasets**
+
+* BooksCorpus (800M words)
+* English Wikipedia (2.5B words)
+
+---
+
+### **Model Training and Testing**
+
+* Pre-training on large unlabeled text
+* Fine-tuning on downstream tasks (QA, NLI, etc.)
+* Uses WordPiece embeddings and special tokens ([CLS], [SEP])
+
+---
+
+### **Results**
+
+* State-of-the-art on **11 NLP tasks**
+* GLUE score: **80.5%**
+* SQuAD F1: **93.2**
+
+---
+
+### **Conclusions**
+
+BERT shows that bidirectional context significantly improves NLP performance and reduces the need for task-specific architectures.
+
+---
+
+### **Open Questions**
+
+* High computational cost
+* Domain adaptation challenges
+* Handling long documents
+
+---
+
+### **Relevance to Our Team**
+
+* Used in **BioBERT / SciBERT embeddings**
+* Helps in **clinical entity extraction (NER)**
+* Improves query understanding in our AI agent pipeline
+
+---
+
+## **Reference:**
+
+Jacob Devlin et al.,2019,NAACL-HLT 2019 (ACL),https://aclanthology.org/N19-1423/
