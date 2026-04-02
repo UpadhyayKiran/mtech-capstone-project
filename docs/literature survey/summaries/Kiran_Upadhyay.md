@@ -1022,3 +1022,107 @@ BERT shows that bidirectional context significantly improves NLP performance and
 ## **Reference:**
 
 Jacob Devlin et al.,2019,NAACL-HLT 2019 (ACL),https://aclanthology.org/N19-1423/
+
+---
+
+# **Title: Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks**
+
+## **Problem Statement**
+
+The paper addresses a major limitation of BERT-based models: while BERT produces powerful contextual embeddings, it is not efficient for computing sentence similarity. Comparing two sentences using vanilla BERT requires passing both sentences together through the model, which is computationally expensive and not scalable for large datasets.
+
+The study aims to develop a method for generating fixed-size sentence embeddings that can be efficiently compared using similarity measures such as cosine similarity.
+
+---
+
+## **Algorithms Used**
+
+The paper introduces **Sentence-BERT (SBERT)**, which modifies the BERT architecture using a **Siamese and triplet network structure**.
+
+Key components include:
+
+* Shared BERT encoder for sentence pairs
+* Pooling operations (mean pooling, max pooling) to generate sentence embeddings
+* Training using similarity objectives such as:
+
+  * Cosine similarity loss
+  * Triplet loss
+
+This design allows sentences to be encoded independently and compared efficiently.
+
+---
+
+## **Datasets**
+
+The model is trained and evaluated on several benchmark datasets, including:
+
+* STS (Semantic Textual Similarity) benchmark datasets
+* SNLI (Stanford Natural Language Inference)
+* MultiNLI
+
+These datasets provide labeled sentence pairs for measuring semantic similarity and entailment.
+
+---
+
+## **Model Training and Testing**
+
+The SBERT model is trained using sentence pairs with similarity labels. During training:
+
+* Each sentence is passed independently through the same BERT encoder
+* Embeddings are compared using cosine similarity
+* The model is optimized to minimize the difference between predicted and actual similarity scores
+
+Evaluation is performed using correlation metrics such as Pearson and Spearman correlation with human-annotated similarity scores.
+
+---
+
+## **Results**
+
+Sentence-BERT achieves:
+
+* Significant speed improvements (up to 10,000x faster for similarity search compared to vanilla BERT)
+* Comparable or better performance on semantic similarity tasks
+* Efficient scalability for large-scale retrieval systems
+
+The model enables real-time semantic search and clustering tasks.
+
+---
+
+## **Conclusions**
+
+The authors conclude that SBERT successfully addresses the computational limitations of BERT for sentence similarity tasks by producing meaningful and reusable sentence embeddings.
+
+This makes it highly suitable for applications such as:
+
+* Semantic search
+* Information retrieval
+* Clustering and ranking
+
+---
+
+## **Open Questions**
+
+* How to further improve embedding quality for domain-specific tasks (e.g., biomedical text)
+* Integration with retrieval-augmented systems for better contextual grounding
+* Handling very long documents efficiently
+
+---
+
+## **Relevance to Our Team**
+
+This paper is highly relevant to our project, particularly for the **retrieval and embedding stages**.
+
+In our system:
+
+* Sentence embeddings are used to convert queries and documents into vector representations
+* These embeddings enable **semantic similarity search** in vector databases
+* SBERT provides a strong foundation for efficient and scalable retrieval in our RAG-based pipeline
+
+---
+
+## **Reference**
+
+Reimers, N., & Gurevych, I., 2019, EMNLP Proceedings
+[https://aclanthology.org/D19-1410/](https://aclanthology.org/D19-1410/)
+
+---
