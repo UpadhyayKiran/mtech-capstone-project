@@ -29,4 +29,4 @@ vectorstore = create_faiss_index(chunks, embeddings)
 print("Saving index...")
 vectorstore.save_local(index_path)
 
-print("✅ Index built successfully!")
+print("Index built successfully!")
