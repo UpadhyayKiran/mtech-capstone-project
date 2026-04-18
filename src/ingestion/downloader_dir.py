@@ -101,7 +101,9 @@ def download_file(session: requests.Session, key: str, output_root: Path):
     print(f"  Saved to: {local_path}")
 
 
-def download_pmc_folder(pmcid: str, out_dir: Path, session: requests.Session, delay: float = 0.2) -> None:
+def download_pmc_folder(
+    pmcid: str, out_dir: Path, session: requests.Session, delay: float = 0.2
+) -> None:
     """
     Download the full folder/prefix for a PMCID by trying a few possible versions.
     Example S3 prefix:
@@ -140,7 +142,9 @@ def download_pmc_folder(pmcid: str, out_dir: Path, session: requests.Session, de
             break
 
         if not found_any:
-            print(f"FAILED: no folder found in first {max_versions_to_try} versions for {pmcid}")
+            print(
+                f"FAILED: no folder found in first {max_versions_to_try} versions for {pmcid}"
+            )
 
     except Exception as e:
         print(f"ERROR for {pmcid}: {e}")
@@ -148,7 +152,9 @@ def download_pmc_folder(pmcid: str, out_dir: Path, session: requests.Session, de
 
 def main():
     if len(sys.argv) < 3:
-        print("Usage: python downloader_dir.py <pmc_metadata.csv> data\metadata\raw_dirs")
+        print(
+            "Usage: python downloader_dir.py <pmc_metadata.csv> data\metadata\raw_dirs"
+        )
         sys.exit(1)
 
     list_path = Path(sys.argv[1])
@@ -156,7 +162,9 @@ def main():
 
     with requests.Session() as session:
         if not check_s3_connectivity(session):
-            print("Aborting due to connectivity problem to pmc-oa-opendata.s3.amazonaws.com.")
+            print(
+                "Aborting due to connectivity problem to pmc-oa-opendata.s3.amazonaws.com."
+            )
             sys.exit(1)
 
         pmcids = load_pmcids(list_path)

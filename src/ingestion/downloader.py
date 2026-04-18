@@ -109,7 +109,7 @@ def load_pmcids(path: Path):
 
 def main():
     if len(sys.argv) < 3:
-        print("Usage: python downloader.py <pmc_metadata.csv> data\metadata\raw_pdfs")
+        print("Usage: python downloader.py <pmc_metadata.csv> <output_folder>")
         sys.exit(1)
 
     list_path = Path(sys.argv[1])

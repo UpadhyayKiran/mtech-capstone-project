@@ -10,7 +10,7 @@ import requests
 import xml.etree.ElementTree as ET
 
 BASE_EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
-
+ 
 EMAIL = "upadhyayk23@gmail.com"
 API_KEY = ""
 
@@ -22,15 +22,15 @@ KEYWORDS = [
     "biomedical literature",
 ]
 
-TARGET_COUNT = 50
+TARGET_COUNT = 500
 YEAR_START = 2019
 YEAR_END = 2026
 LANGUAGE = "english"
 HUMANS_ONLY = True
 
 # Balanced collection
-PER_YEAR_LIMIT = 6
-PER_KEYWORD_YEAR_LIMIT = 10
+PER_YEAR_LIMIT = 63
+PER_KEYWORD_YEAR_LIMIT = 100
 
 OUTPUT_CSV = "data\metadata\pmc_metadata.csv"
 LOG_DIR = "outputs\logs"
@@ -41,6 +41,7 @@ SLEEP_BETWEEN_REQUESTS = 0.34
 
 
 # ------------------ Utilities ------------------
+
 
 def ensure_dirs():
     os.makedirs("data\raw_pdfs", exist_ok=True)
@@ -74,6 +75,7 @@ def text(elem):
 
 # ------------------ Query ------------------
 
+
 def build_query(keyword: str, year: int) -> str:
     parts = [
         f'("{keyword}")',
@@ -81,11 +83,14 @@ def build_query(keyword: str, year: int) -> str:
         f'("{year}/01/01"[Date - Publication] : "{year}/12/31"[Date - Publication])',
     ]
     if HUMANS_ONLY:
-        parts.append('(humans[MeSH Terms] OR clinical[Title/Abstract] OR patient[Title/Abstract])')
+        parts.append(
+            "(humans[MeSH Terms] OR clinical[Title/Abstract] OR patient[Title/Abstract])"
+        )
     return " AND ".join(parts)
 
 
 # ------------------ API ------------------
+
 
 def esearch(query: str, retmax: int = PER_KEYWORD_YEAR_LIMIT) -> List[str]:
     url = f"{BASE_EUTILS}/esearch.fcgi"
@@ -149,6 +154,7 @@ def extract_year_from_pubmed_summary(record: Dict) -> str:
 
 # ------------------ Extractors ------------------
 
+
 def get_title(article):
     return text(article.find(".//article-title"))
 
@@ -179,6 +185,7 @@ def get_license(article):
 
 # ------------------ Seen tracking ------------------
 
+
 def load_seen():
     if not os.path.exists(SEEN_PMCIDS_FILE):
         return set()
@@ -201,6 +208,7 @@ def write_csv(rows: List[Dict]):
 
 
 # ------------------ Main ------------------
+
 
 def main():
     ensure_dirs()
@@ -242,7 +250,9 @@ def main():
                 batch_pmids.append(pmid if pmid else "")
 
             valid_pmids = [p for p in batch_pmids if p]
-            pubmed_summary = esummary_pubmed(valid_pmids) if valid_pmids else {"result": {}}
+            pubmed_summary = (
+                esummary_pubmed(valid_pmids) if valid_pmids else {"result": {}}
+            )
             pubmed_map = pubmed_summary.get("result", {})
 
             for idx, article in enumerate(articles):
