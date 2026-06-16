@@ -1,0 +1,14 @@
+timestamp,query,retrieved_pmcids,confidence_score,validation_score,retrieved_count
+2026-05-15T16:57:18.765627,atrial fibrillation mobile health patient outcomes,PMC10029859; PMC8475702; PMC11759446,0.932,1,3
+2026-05-15T17:02:32.854711,oncology trial enrollment barriers,PMC8860011; PMC11202609; PMC9096735,0.937,1,3
+2026-05-17T14:33:48.911709,oncology trial enrollment barriers,PMC8860011; PMC11202609; PMC9096735,0.937,1.0,3
+2026-05-21T23:29:01.231180,oncology trial enrollment barriers,PMC8860011; PMC11202609; PMC9096735,0.937,1.0,3
+2026-05-21T23:37:52.812467,atrial fibrillation mobile health patient outcomes,PMC10029859; PMC8475702; PMC11759446,0.932,1.0,3
+2026-05-22T13:39:00.562151,oncology trial enrollment barriers,PMC8860011; PMC11202609; PMC9096735,0.937,1.0,3
+2026-05-22T13:42:28.179024,atrial fibrillation mobile health patient outcomes,PMC10029859; PMC8475702; PMC11759446,0.932,1.0,3
+2026-05-22T13:44:03.043358,remote patient monitoring clinical benefits,PMC11759446; PMC7418420; PMC10029859,0.952,1.0,3
+2026-05-22T13:47:09.531450,clinical trial patient retention strategies,PMC11096429; PMC9136463; PMC10262501,0.951,1.0,3
+2026-05-22T13:49:44.503144,wearable devices in cardiovascular monitoring,PMC10029859; PMC11759446; PMC12781683,0.933,1.0,3
+2026-06-05T16:55:29.671282,atrial fibrillation mobile health patient outcomes,PMC10029859; PMC8475702; PMC11759446,0.932,1.0,3
+2026-06-05T17:10:43.691297,atrial fibrillation mobile health patient outcomes,PMC10029859; PMC8475702; PMC11759446,0.932,1.0,3
+2026-06-05T17:19:40.584957,atrial fibrillation mobile health patient outcomes,PMC10029859; PMC8475702; PMC11759446,0.932,1.0,3
