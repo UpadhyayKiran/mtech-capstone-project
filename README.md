@@ -345,11 +345,3 @@ This enables transparent and interpretable biomedical question answering.
 > An Agentic Evidence-Based Clinical Research Assistant that combines metadata-aware biomedical retrieval, QLoRA-adapted BioMistral generation, response validation, and explainable evidence-grounded reasoning for clinical research support.
 
 ---
-
-## Author
-
-**Kiran Upadhyay**
-
-M.Tech Capstone Project
-
-PES University
