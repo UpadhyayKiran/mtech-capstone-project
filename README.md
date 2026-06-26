@@ -227,6 +227,18 @@ mtech-capstone-project
 
 ---
 
+## Development Environment
+
+- Processor: Intel Core i7-13620H
+- Memory: 16 GB RAM
+- GPU: NVIDIA RTX 4060 Laptop GPU (8 GB VRAM)
+
+## Running on Google Colab
+
+Use a GPU runtime (recommended: NVIDIA T4), install the required dependencies, mount Google Drive, update the project paths in `app.py`, and launch the Streamlit application using ngrok.
+
+---
+
 ## Installation
 
 ### Clone Repository
